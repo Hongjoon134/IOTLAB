@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 변수(가변형)-> 변수에 값이 들어간 순간 형태가 결정됨
+        // var(variant;가변적인)을 앞에 적어주면 한 변수에 여러 값을 적어도 구현이 됨
+        // let을 앞에 적어서 변수 선언할 때 한 값만 적을 수 있음(세간에 국룰임!!) -> 이걸로 변수 지정하기!! 
+        
+        //var a=10;
+        let a=30;
+        console.log(a) // aaaaaa가 입력됨
+        
+        // 상수 : const로 선언함
+        const b=30;
+          // b=40
+        console.log(b);
+
+        // 데이터 타입 (6가지)
+         // 지정해주고 console창을 통해 확인할 수 있음!
+        // ex) let arr = ['a','b'] : array(배열)타입 
+        
+        // string(문자형)
+        let str = "파이썬" ; 
+          console.log(str)
+          console.log(typeof str); // string -> 자료형 : 문자형
+          // 자료형을 알아야 알맞은 함수를 지정해줄 수 있다!
+        
+        // number(숫자형)
+        let x1= 23 // int (정수)
+        let x2 = 23.55 // float(실수)
+        console.log(x1,x2);
+        console.log(typeof x1); // number(숫자형)
+
+        // Boolean(불리언형)
+        let x=true // true=참, false=거짓, 0=거짓 / 0이외의 값 = 참
+        console.log(x);
+        console.log(typeof x); // boolean
+        let y = 5
+        // 관계 연산자, 논리 연산자의 결과는 boolean(T,F)값으로 나온다.
+        console.log(x==y); // 서로 비교는 가능하다!
+        
+        //undefined(할당하지 않은 자료형)
+        let car;
+        console.log(car);
+        console.log(typeof car); // undefined
+
+        // null(널값,결측치)
+        let z = null;
+        console.log(z);
+        console.log(typeof z); // object(객체)로 분류됨
+
+
+        // 객체(Object)타입 : Dic(Key:Value) = 딕셔너리/JSON구조
+        const person={ 
+          firstname : 'park',
+          lastname : 'mae il',
+          age : 40,
+          phone : "010-1111-1111"
+          }
+          console.log(person);
+          console.log(person.age);
+          console.log(person["age"]);
+
+          let json=JSON.stringify(person); // JSON.stringfy(변수명) : 문자열화 기능
+          console.log(json); // 문자열 타입(string)이 된다.
+          console.log(typeof json);
+
+          const member = JSON.parse(json); // JSON.parse(변수명) : 객체화 기능
+          console.log(member.age); // 객체 타입(object)이 된다.
+          console.log(typeof member); 
+
+          //Array(배열) = 라이브러리 기능( 배열에서 사용할 수 있는 여러기능이 저장ed ㅇ)
+          
+          //const arr = []; // 배열 생성방법 1
+          // const arr = new Array(); //  배열 생성방법 2
+          // 'new' : 객체 생성 키워드 -> 생성자 함수
+          //console.log(typeof arr);
+          // * 배열 : 각 데이터가 인접해있고 인덱싱으로 정보를 추출할 수 있다. <--> 객체 형태
+
+          // Array(배열) = object
+          const arr = [1,2,3] //  new Array()
+          console.log(arr[2]); // 3
+          console.log(arr.push(7)); // .push() : 배열의 끝에 가로 안의 값을 추가한다.
+          console.log(arr);
+          arr[2] = 9; 
+          console.log(arr);
+          // 배열명[인덱스번호] = 새로운 값 →  배열 중 인덱싱 해당 값을 새로운 값으로 변경해준다
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+ 
+<div class="mt-5">
+  <h2>JavaScript</h2>
+  <div class="card">
+    <div class="card-header">ex02</div>
+    <div class="card-body">
+     <div class = "col-8"></div>
+     <div class = "col-4">결과화면</div>  
+    </div> 
+    <div class="card-footer">사물지능기반 지능제어 서비스 개발자 과정</div>
+  </div>
+</div>
+
+</body>
+</html>

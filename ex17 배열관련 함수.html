@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Array(배열) : list 형태
+    //              0     1       2     3
+    let fruits = ["Apple", "Banana", "Pear", "Kiwi"];
+    
+    // 1. toString( ) : 
+    console.log(fruits); // [  ] : 빈 리스트 추출됨.
+    console.log(fruits.toString()); // ['Apple', 'Banana', 'Pear', 'Kiwi']
+    /*
+    // 배열 내 데이터의 길이 ( 인덱싱 통해 접근해주기!! )
+    console.log(fruits.length); // 4
+    console.log(fruits[0].length); //6
+    console.log(fruits[1].length); //6
+    console.log(fruits[2].length); //4
+    console.log(fruits[3].length); //4
+
+    for(let i=0;i<=fruits.length;i++){
+        console.log(fruits[i].length);
+    }
+    for(const f of fruits){
+        console.log(f.length);
+    }
+    */
+
+    // 2. pop() : 제일 끝 데이터를 추출하고 제거하는 함수 (LIFO)
+    let tail = fruits.pop();
+    console.log(tail);
+    console.log(fruits);
+
+    // 3. push() : 데이터를 끝에 추가하는 함수 (LIFO)
+    fruits.push("KIwi");
+    console.log(fruits);
+
+    // 4. shift() : 제일 처음 데이터를 추출하고 제거하는 함수 
+    console.log(fruits.shift());
+    console.log(fruits);
+
+    // 5. unshift() : 제일 처음 자리에 데이터를 추가하고 그 이후 배열의 전체 길이를 반환해준다.
+    console.log(fruits.unshift("Lemon"));
+    console.log(fruits);
+
+    // 6. sort() : 문자나 한자리 숫자를 기준으로 오름차순 정렬해준다.
+    console.log(fruits.sort()) ; // ['Banana', 'KIwi', 'Lemon', 'Pear']
+    let arr = [1,3,4,6,5,2, 11, 25, 123] // [1, 11, 123, 2, 25, 3, 4, 5, 6]
+    console.log(arr.sort(function(a,b){return a-b})) ; 
+    // 연산 결과 음수(-60)이 나오면 자리를 바꾸지 않는다 -> 숫자가 오름 차순으로 정렬됨.
+    console.log(arr.sort(function(a,b){return b-a})) ; // -> 숫자 내림차순 정렬 
+
+    // 7. map(), filter() 함수도 존재 -> 객체에 대한 개념을 배운 이후로 배울 예정!!
+
+</script>
+</head>
+<body>
+ 
+<div class="mt-5">
+  <h2>JavaScript</h2>
+  <div class="card">
+    <div class="card-header">ex02</div>
+    <div class="card-body">
+     <div class = "col-8"></div>
+     <div class = "col-4">결과화면</div>  
+    </div> 
+    <div class="card-footer">사물지능기반 지능제어 서비스 개발자 과정</div>
+  </div>
+</div>
+
+</body>
+</html>
