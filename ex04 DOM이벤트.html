@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h id="txt">h1태그 컨텐츠</h>
+<button onclick="popUp()">직접 작성</button> // 버튼을 클릭했을 때 popUp이 뜨게 하기!
+<button id="btn_han">핸들러용 버튼</button>    
+<button id="btn_lis">리스너용 버튼</button>    
+<button id="btn_event">이벤트 객체용 버튼</button>    
+
+<script>
+    /* Event : DOM 요소에 원하는 이벤트를 부여해보자! 
+    - click, mouseover, mouseout, change , keydown,,,,
+
+    eventHandler vs eventListener
+    - handler : 하나의 요소당 하나의 이벤트만 부여 가능하다.
+    - listener : 하나의 요소에 여러개의 이벤트 부여 가능하다.
+    
+    실습 : 버튼들을 클릭시, 팝업창으로 "pop up!"이라고 띄워줄 것
+    */
+
+   // Case 1. html 태그에 직접 함수를 작성하는 경우
+   // - 단점 : 개발자 도구 칸에 함수명이 노출된다.(보안에 굉장히 취약해짐)
+   const popUp = () => {
+        alert("Pop!")
+    }
+
+    const popUp2 = () => {
+        alert("Pop2!")
+    }
+   
+
+   // Case 2. 이벤트 핸들러
+   // - 사용 방법 : 요소.이벤트 = 실행해줄 함수 
+   // -단점 : 하나의 이벤트만 처리 가능하다.
+   let btn_han = document.getElementById("btn_han")
+   btn_han.onclick = popUp
+   btn_han.onclick = popUp2 // 핸들러는 하나만 실행시켜줄 수 O -> 젤 마지막이 작동된다!
+
+   // Case 3.  이벤트 리스너
+   // - 사용방법 : 요소.addEventListener('이벤트',함수) // 이벤트가 들어올 때 함수를 실행해줘!
+   let btn_lis = document.getElementById('btn_lis')
+   btn_lis.addEventListener('click', popUp)
+   btn_lis.addEventListener('click', popUp2) // 적어준 두번 다 실행이 잘 됨!
+
+   // *함수를 선언하지 않고 '직접 등록'하는 방법 ( 익명 함수 )
+   btn_lis.addEventListener('click',()=>{
+        alert('Pop3!') // 적어준 두번 실행 외에 pop3 실행이 추가되었음!
+   })
+
+   // Case 4. 이벤트 객체
+   // 이벤트가 발생하는 그 주체와 내용을 알 수 있다. ex) 사용자가 자주 클릭하는 버튼(리액트)
+   // 이벤트 함수의 매개변수를 이용
+   let btn_event = document.getElementById("btn_event")
+   btn_event.addEventListener('click',(e)=>{ // event 객체를 표현해줄 땐 변수로 주로 'e'를 사용한다
+        console.log("이벤트 : ", e) // 이벤트 객체의 속성을 확인하기 위해서는 반드시 지칭하는 매개변수가 필요하다.
+        console.log("이벤트가 발생한 주체(태그) : ", e.target)
+        console.log("이벤트가 발생한 주체의 내용 : ", e.target.innerText)
+   })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="msg">Hello World</p>
+
+    <p id="test">야래향 - 심규선</p>
+    <script>
+        // 요소의 CSS스타일 다루기
+        // - HTML요소의 style속성 값에 접근하거나 변경
+        // - 요소.style.속성 = "값"
+        
+        //스타일 지정할 요소 가져오기
+        let msg = document.getElementById('msg') 
+        msg.style.color = "blue"; 
+        msg.style.backgroundColor = "lightblue" 
+
+        // 예제
+        // id가 test인 요소의 style을 본인이 원하는 대로 
+        // 2개 이상 지정해보자!
+        // DOM으로 style을 다룰 때는 모든 속성값이 카멜케이스로 작성된다.
+        // css : background-color
+        // DOM : backgroundColor
+
+        let test = document.getElementById('test');
+        test.style.color = "darkgreen"
+        test.style.backgroundColor = "lightyellow"
+        test.style.fontSize = "40px"
+
+        /*표기법 종류!
+        1) 카멜케이스 : camelCase(앞 소문자, 뒤 대문자) -Javascript
+        2) 파스칼케이스 : PascalCAse( 앞 대문자, 뒤 대문자)
+        3) 스네이크 케이스 : snake_case (_기호로 연결)
+        4) 케밥 케이스 : kebob-case(-기호로 연결)
+        5) 헝가리안 케이스 : 접두어에 자료형을 표기 ex) String text
+    </script>
+</body>
+</html>

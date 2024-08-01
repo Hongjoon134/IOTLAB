@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS를 복습해보자!</h1>
+    <script>
+        // 1. 배열 
+        //  : 같은 타입의 여러 변수를 하나의 묶음으로 다루는 것.
+        // - 배열을 나타내는 괄호 : 대괄호 [ ]
+        // - 접근 : 인덱스 번호 --> 배열 이름[인덱스번호]
+
+        // 주의사항 : JS는 타입을 고정하는 언어가 아니기 때문에
+        //           다른 타입을 한 배열 안에 넣더라도 오류는 나지 않는다.
+        //           그러나, 배열의 특성상 같은 타입을 넣는 것이 좋다. 
+
+
+        let array = [1,"안녕",true]
+        console.log('배열', array[1])
+
+        // 2. 객체 
+        //  : 속성과 값으로 구성되어 있는 데이터의 집합
+        // - 객체를 나타내는 괄호 : 중괄호 { }
+        // - 객체 접근 : 객체이름.속성이름(key값)
+        // - 다양한 타입이 들어갈 수 있어서 굳이 통일해줄 필요는 없다. 
+        // 배열 안에 객체 가능! / 객체 안에 배열 가능! / 
+        // 객체 안에 함수 가능!
+        let person = {
+            name : "최홍준",
+            blood : "B",
+            drive : false,
+            ment : function(){
+                // alert("말할때 항상 침묵 엔딩임.")
+            },
+            score : [100,80,70]
+        }
+
+        console.log(person.name)
+        console.log(person.blood)
+        console.log(person.drive)
+        person.ment() // 객체 내 함수의 경우 호출하는 방법(객체명.함수명)
+        console.log(person.score[1])
+        
+        
+        // 3. 함수
+        // : 특정 기능들을 묶어서 호출할 수 있도록 하는 기능
+        // - 장점 : 코드가 반복되지 않고 재사용성이 뛰어나다.
+        // 함수 접근 : 함수이름()
+        // ex) console.log( ) -> console
+        
+        // 숫자 두개를 입력 받아서 그 두개를 더해주는 함수를 만들어보자!
+        
+        console.log(addNum(2,3));
+        /*
+        function addNum(num1,num2){
+            return num1 + num2;
+        }  
+        */
+
+        // 호이스팅 방지한 함수 선언문
+        const addNum = function (num1,num2){
+            return num1 + num2;
+        }
+
+        // 호이스팅 방지는 해야겠는데, 위처럼 쓰는 게 불편해!
+         // ==> 화살표 함수 (Arrow Function)
+
+         const addNum2 = (num1, num2) => {
+            return num1+num2
+         }
+
+        // 호이스팅(Hoisting) 
+        // : JS 해석하는 인터프리터가 변수, 함수의 메모리 공간을 미리 할당한 것.
+        // ' 아 너 addNum이라는 함수 있구나? ㅇㅋㅇㅋ 코드 시작해도 되~'
+        // addNum이라는 선언문이 나오기 전에 그 존재를 알고 있는 것 -> 오류: 출력되지X 
+
+        // ES6에서 호이스팅을 방지하기 위한 새로운 문법 : let, const
+        console.log ('var', num);
+        let num = 3
+
+        // let, const에도 호이스팅 현상은 일어난다.
+        // 다만, 선언하기 전에는 접근하지 못하도록 막아둔 것!
+
+        // 면접 단골 질문! ★ 
+        // Q. var와 let의 차이점을 아십니까?( == 너 호이스팅 아니?)
+        // A. JavaScript에서는 호이스팅 현상이 일어나기 때문에
+        //    선언 코드를 작성 전에 호출을 해도 오류가 나지 않습니다.
+        //    이러한 부분을 방지하고자 let, const와 같은 신문법 키워드를 사용합니다.
+        //    let, const에서도 호이스팅 현상은 일어나지만 선언하기 전에는 
+        //    접근하지 못하도록 TDZ9(Temporal Death Zone)으로 보내서 막아두는 것입니다.
+
+    </script>
+</body>
+</html>

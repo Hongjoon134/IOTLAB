@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputText">
+    <button id="inputBtn">입력값 가져오기</button>
+
+    <img width="200px" id="imgTag" src="https://cdn.ziksir.com/news/photo/201712/5478_17910.jpg">
+    <button id="getImgBtn">이미지 값 가져오기</button>
+    <button id="setImgBtn">이미지 변경하기</button>
+
+    <script>
+        // 1. input태그 내에 사용자가 입력한 값을 가져와보자
+        let inputBtn = document.getElementById('inputBtn')
+        inputBtn.addEventListener('click',()=>{
+            let inputText = document.getElementById('inputText')
+            console.log('input: ',inputText.value)
+        })
+
+        //2. img태그에 접근해보자.( src속성에 접근)
+        let imgTag = document.getElementById('imgTag')
+
+            // case 1) 요소.속성이름
+            console.log(imgTag.src)
+
+            // case 2) 요소.getAttribute('속성이름')
+            console.log(imgTag.getAttribute('width'))
+
+        // 3. img태그를 바꿔보자.
+        let setImgBtn = document.getElementById('setImgBtn')
+        setImgBtn.addEventListener('click', () => {
+            // 접근 1. 요소.속성이름 = "바꿀 값"
+            imgTag.src = "https://i.pinimg.com/474x/de/79/9d/de799d03d5f74fcb08bf025c7d513475.jpg"
+
+            // 접근 2. 요소.setAttribute('속성','값')
+            imgTag.setAttribute('width','400px')
+        })
+
+
+    </script>
+</body>
+</html>

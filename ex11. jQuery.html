@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Case 1. 파일을 다운로드해서 가져오기! -->
+    <!-- <script src="./JS/jquery-3.7.1.js"></script> -->
+
+    <!-- Case 2. CDN으로 가져오기! -->
+     <script src = "https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>jQuery 사용하기</h1>
+
+    <p id="txt">여러분 안녕하세요</p>
+    input#inputTag
+    <script>
+        /*
+        jQuery란 모든 브라우저에서 동작하는 JS를 
+        단순화시킨 오픈소스 기반 라이브러리
+        
+            1) 문법이 짧다.
+            2)모든 브라우저에서 동작한다.
+            --> 그러나, 익스플로러 서버 종료와 ES6~7 등장으로 사용량 감소
+            ==> 그럼 우린 왜 배움??
+            - 사용량이 워낙 많았기 때문에 다양한 기술블로그에 jQuery 문법이 등장한다.
+            - 구글링을 하다 jQuery 문법을 구분해야 함!
+            - 라이브러리기 땜누에 도구로써 가볍게 사용 가능
+            
+            [설치 방법]
+            Case 1) 파일을 다운로드 받아서 사용
+            Case 2) CDN을 이용해서 사용
+        */
+           //$
+           // jQuery문법의 기본 기호 : $ 
+           
+           // 1. 내가 원하는 HTML 요소 가져오기!
+           // - jQuery : $(선택자)
+           
+           let txtElement = $('#txt')
+           console.log(txtElement)
+
+           // 2.내가 원하는 요소의 내용만 가져오기!
+            console.log(txtElement.text()) 
+
+            //3. 내가 원하는 요소의 내ㅑ용 수정하기
+            txtElement.text('변경값')
+
+            // 4. 내가 원하는 요소의 태그를 포함해서 수정하기!
+            txtElement.html('<h1>태그 포함 변경</h1>')
+
+            // 5. 버튼 이벤트
+            let inputTAg = $('#inputTag')
+            let btn = $('#btn')
+
+            btn.click( () => {
+               console.log(inputTag.val())
+               txtElement.text(inputTag.val())
+
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>DOM이란 무엇인가</h1>
+   <p id="text">이따 어떻게 해야 하징..😱😱ㅋㅋㅋ </p>
+   <button id="btn">내용변경!</button>
+   <!-- 태그+선택자+Enter
+    ex) id가 btn인 버튼 생성 : btn#엔터빵!
+    Emmet 기능중 하나니깐 더 찾아보고 싶으면 검색해보기
+     -->
+
+   <script>
+    //1. '내용변경!'이라는 버튼을 눌렀을 때
+    //2. '이따 어떻게 해야 하징../0\ㅋㅋㅋ'라는 내용을 변경
+    
+    document.getElementById('btn').addEventListener('click',()=>{
+        document.getElementById('text').innerText = '잘할수있찌, 미리 걱정하지 말자 😀'
+    })
+
+   // <h1 id = "text"> Hello World </text>
+    
+        // 1. 문서(html)에서 document 키워드 통해 접근하기
+
+        // 2. 객체에 접근하기 : '.'
+
+        // 3. 요소를 가져온다. : getElement
+
+        // 4. 어떤 방법으로 가져올 것인지? : ById('아이디이름')
+
+        // 복습
+        // 
+        
+
+   </script>
+</body>
+</html>

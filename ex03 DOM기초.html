@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- h#hiTag + 엔터!
+        p.num*2 + 엔터!-->
+    
+    <!--  
+     tip!
+     Alt+L+O : Liveserver을 실행하는 문장으로,
+     html을 단순히 켜는 단축키가 아니다!
+     그러므로 Liveserver가 깔려있지 않은 환경에서는 사용X
+     
+     node 수업을 시작하면 node가 server의 역할을 하므로
+     더이상 Alt+L+O로 서버를 실행시키지 않는다.
+     -->
+    <h1 id="h1Tag">날이 덥네요</h1>
+    <p class="num">p태그1</p>
+    <p class="num">p태그2</p>
+    <script>
+        /* DOM  (Document Object Model)
+           - JS에서 HTML 문서에 접근 및 수정하기 위해 HTML 문서 내 요소들을 
+           전부 단일 요소로 하나 하나 쪼개준다.
+
+           ex) <h1 id="text">Hello World</h1>
+            => h1(태그), id(속성), txt( 속성에 대한 값) , Hello World(컨텐츠)
+            이런 식으로 잘게 잘게 쪼개주는 것!
+
+             쪼개주는 이유 : 쪼개주어야 단일 요소에 각각 접근할 수 있기 때문이다.
+           */
+
+           // 1.아이디가 h1인 태그를 가지고 와보자.
+           let h1Tag = document.getElementById('h1Tag')
+           // id : 하나 --> 'element'
+           // 나머지 : 복수 가능 ->"elements"
+         console.log('내가 가져온 요소 : ', h1Tag);
+
+          // 2. 내가 가져온 요소에서 컨텐츠만 추출해보자! => 안에 있는 텍스트
+          console.log('내가 가져온 요소의 글자 : ', h1Tag.innerText);
+
+          // 3. 내가 가져온 요소에 태그를 포함한 컨텐츠를 넣어서 내용을 수정해보자! ( 태그 포함하지 않기!)
+          h1Tag.innerHTML = "<a href='#'>아아 짱</a>"
+
+          // 1. class가 num인 요소들을 가져와보자.
+          const num = document.getElementsByClassName('num')
+          console.log('클래스를 통해 가져온 요소들', num)
+
+          // class나, TagName, name등으로 요소를 가져오면 여러개일 확률이 있기 때문에
+          // HTMLCollection(유사배열) 형태로 값이 반환된다.
+          // - 배열과 유사한 점 : 인덱스번호로 접근, 많은 값을 한번에 보관
+          // - 배열과 다른 점 : 배열함수 (map, filter, foreach.... ) 사용 불가
+
+         console.log('첫번째 요소', num[0]) // 인덱싱을 통해 첫번째 값만 가져옴!
+
+         // 2. "p태그2"라고 적혀있는 요소의 값을 "변경된 p태그"로 바꿔보자.
+
+          console.log('두번째 요소', num[1], num[1].innerText)
+          num[1].innerText = "변경된 p태그"
+
+        // 3. class가 num인 모든 데이터를 가져오고 싶다면??
+         for (let i=0;i<num.length ; i++){
+            console.log(num[i].innerText);
+         }
+         
+          
+    </script>
+</body>
+</html>

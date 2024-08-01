@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <button id="btn">변경</button>
+    <br/>
+    <img src="https://i.pinimg.com/564x/f9/54/c6/f954c60e95b7e61cc6ee0fdfb1dc2730.jpg" id="imgTag" width="500px">
+    
+<script>
+    //1.사진을 3개 구해온다.
+    // 가능 : jpg, jpeg, png, gif
+    // 불가능 : jfif,webp
+
+    // 구글에 검색해서 -> 썸네일 클릭하고 -> 옆에 뜨는 큰 사진에 대로
+    // -> 이미지 주소복사
+    // 3개의 주소를 각각 url1, url2, url3 이라는 변수 등록
+
+    // 2. input 태그 안에 사용자가 입력한 값을 inputName이라는 변수 안에 
+    // 3. 입력한 값에 따라서 다른 사진이 나오도록 하기
+
+    let url1 = "https://i.pinimg.com/564x/12/20/05/12200579b5389850dbfe2990fd906722.jpg"
+    let url2 = "https://i.pinimg.com/736x/34/81/f3/3481f3eaf1c0f673fdc5f2fda18242df.jpg"
+    let url3 = "https://isplus.com/data/isp/image/2024/07/31/isp20240731000004.800x.0.jpg"
+    /*
+    let imgTag = document.getElementById("imgTag")
+    let btn = document.getElementById('btn')
+    btn.addEventListener('click',() => {
+    let name = document.getElementById('name').value
+    if(name == "참아봐"){
+        imgTag.src = url1
+        imgTag.setAttribute('width','400px')
+    } else if(name == "못 참으면 사망"){ 
+        imgTag.src = url2
+        imgTag.setAttribute('width','400px')
+    } else if(name == "참으면 생존"){ 
+        imgTag.src = url3
+        imgTag.setAttribute('width','400px')
+    } 
+   })
+    */
+
+    let btn = document.getElementById('btn')
+    let name = document.getElementById('name')
+    let img = document.getElementsByTagName('img')[0] //tagname은 복수로 존재할 수 있으므로 인덱싱을 통해 지정해준다.
+
+    btn.addEventListener('click',() => {
+        if(name.value == "참아봐"){
+            img.src = url1
+        } else if(name.value == "못 참으면 사망"){
+            img.src = url2
+        } else if (name.value == "참으면 생존"){
+            img.src = url3
+        } 
+
+        name.value = ""
+    
+    })
+    
+    
+  
+
+
+</script>
+
+
+</body>
+</html>

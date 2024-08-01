@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light{
+            background-color: white;
+            color: black;
+        }
+
+        .dark{
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+<body id = "container" class = 'light'>
+    <h1>스마트인재개발원</h1>
+    <p>사물지능과정 - 000 </p>
+    <button id="btn">dark모드</button>
+
+    <script>
+        // 1.changeMode라는 이름의 함수를 선언한다.
+        // 2. id가 btn인 버튼을 클릭시, chageMode 함수가 실행되도록 한다.
+        // 3. changeMode 함수를 구성해보자
+        //  - "dark모드"라는 버튼 클릭 시, 버튼의 내용을 "light모드로 변경해주자"
+        //  - "dark모드"라는 버튼 클릭 시, class가 light면 dark로
+        
+        //  - "light모드"라는 버튼 클릭 시, 버튼의 내용을 "light모드로 변경해주자"
+        //  - "light모드"라는 버튼 클릭 시, class가 dark면 light로 변경하기!
+
+        // 필요한 기능 : class내용에 포함되어 있는지 확인, 내용을 toggle시켜주기, 버튼 내용 확인.
+        
+        /*
+        let btn = document.getElementById('btn')
+        const changeMode = () => {
+            btn.addEventListener('click')
+            btn.innerText = "light모드" 
+            btn.classList.remove('dark')
+            btn.classList.add('light')
+        }             
+        */
+        
+         // 1.changeMode라는 이름의 함수를 선언한다.
+         console.log(btn.classList)
+
+        const changeMode = () => {
+            console.log('changeMode Func')
+            let container = document.getElementById('container')
+            let btn = document.getElementById('btn')
+
+            // 비교 case 2 : 클래스 여부, 버튼 안의 내용 여부 (조건문 안에 ! 있는거 주의)
+            if(!container.classList.contains('light')){
+                // 버튼을 다크모드
+                btn.innerText = 'dark모드'
+            } else {
+                //버튼을 라이트모드로 변경
+                btn.innerText = 'light모드'
+            }
+
+
+            // 라이트모드일 때 다크모드로 바꾸기
+            container.classList.toggle('light')
+            container.classList.toggle('dark')
+        }
+        // 2. id가 btn인 버튼을 클릭시, chageMode 함수가 실행되도록 한다.
+        document.getElementById('btn')
+        btn.addEventListener('click',changeMode)
+
+        // 3. changeMode 함수를 구성해보자
+        //  - "dark모드"라는 버튼 클릭 시, 버튼의 내용을 "light모드로 변경해주자"
+        //  - "dark모드"라는 버튼 클릭 시, class가 light면 dark로
+        
+        //  - "light모드"라는 버튼 클릭 시,, 버튼의 내용을 "light모드로 변경해주자"
+        //  - "light모드"라는 버튼 클릭 시, class가 dark면 light로 변경하기!
+
+        // 필요한 기능 : class내용에 포함되어 있는지 확인, 내용을 toggle시켜주기, 버튼 내용 확인.
+   
+    </script>
+
+</body>
+</html>
